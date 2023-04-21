@@ -1,0 +1,35 @@
+// $eq = equal to
+db.projects.find({cost: {$eq: 2000}}).pretty();
+
+// #ne = not equal to
+db.projects.find({cost: {$ne: 2000}}).pretty();
+
+// $exists
+db.projects.find({cost: {$exists: true}}).pretty();
+
+// $gt = greater then
+// $lt = less then
+// $gte = greater then or equal to
+db.projects.find({cost: {$gt: 10000}}).pretty();
+db.projects.find({cost: {$gte: 10000}}).pretty();
+db.projects.find({cost: {$lt: 10000}}).pretty();
+db.projects.find({cost: {$lte: 10000}}).pretty();
+
+// $in
+db.projects.find({
+	category: {$in:['Web Design','Web Programming']}
+}).pretty();
+
+// $and - $or
+db.projects.find({$or: [{cost: {$eq: 2000}},{cost: {$gt: 10000}}]}).pretty();
+db.projects.find({$and: [{category: {$eq: 'Mobile Programming'}},{cost: {$gt: 10000}}]}).pretty();
+
+db.projects.aggregate({$limit: 2}).pretty();
+db.projects.aggregate({$skip: 2}).pretty();
+db.projects.aggregate({$sort: {name: 1}}).pretty();
+db.projects.aggregate([{$match: {name: 'Company Website'}}]).pretty();
+
+db.projects.aggregate([
+	{$project: {projectDescription:{$concat:["$name"," - ","$category"]}}}
+]).pretty();
+

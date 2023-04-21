@@ -1,0 +1,11 @@
+// To display databases
+show dbs
+
+// To create a database "projectmanagement"
+use projectmanagement
+
+// To create a collection "projects"
+db.createCollection('projects');
+
+// To display collections
+show collections

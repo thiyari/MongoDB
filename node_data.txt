@@ -1,0 +1,57 @@
+db.movies.insert({title:'The Exorcist',description:'when the Rance family are plagued by a demoic presence, two priests must come togeather, in the hopes of defeating the evil force', cover: 'https://www.gaietytheatre.ie/wp-content/uploads/2019/03/The-Exorcist-500x700-Poster-Image-330x443.jpg',genre:'Horror',actors:['Alfonso Herrera','Ben Daniels'],releaseDate:new Date(2016-10-11)});
+
+
+db.movies.insert({title:'Deepwater Horizon',description:'A dramatization of the April 2010 disaster when the offshore drilling rig, Deepwater Horizon, exploded and created the worst oil spill in U.S. histroy', cover: 'https://newslibre.com/wp-content/uploads/2016/06/Deepwater-Horizon-2016-Movie-Review-Newslibre-768x438.jpg',genre:'Drama',actors:['Mark Wahlberg','Kurt Russel'],releaseDate:new Date(2016-11-11)});
+
+// general post() usage in router.js and URL method in postman
+{
+		title: 'The Accountant',
+		description: 'As a math savant uncooks the books for a new client, the Treasury Department closes in on his activites and the body count starts to rise.',
+		cover: 'https://m.media-amazon.com/images/I/91dAIcmOjAL._SL1500_.jpg',
+		genre: 'Drama',
+		actors: ['Ben Affleck'],
+		releaseDate: new Date('2016-12-01')
+}
+METHOD: POST 
+URL: http://localhost:3000/api/v1/movies
+
+
+// post() usage in postman
+METHOD: POST 
+URL: http://localhost:3000/api/v1/movies
+
+Headers:
+key: Content-Type
+value: application/json
+
+Body: raw(JSON)
+{
+    "title":"The Girl on the Train",
+    "description":"A divorce becomes entangled in a missing persons investigation that promises to send shockwaves throughout her life.",
+    "cover":"https://townsquare.media/site/442/files/2016/10/The-Girl-on-the-Train-changes1.jpg",
+    "genre":"Thriller",
+    "releaseDate":"2016-12-12",
+    "actors":["Emily Blunt","Haley Bennet"]
+}
+
+// updateOne() usage in postman
+METHOD: PUT 
+URL: http://localhost:3000/api/v1/movies/643fd2f5ba597eafecc07322
+
+Headers:
+key: Content-Type
+value: application/json
+
+Body: raw(JSON)
+{
+    "genre":"Thriller"
+}
+
+// deleteOne() usage in postman
+METHOD: DELETE 
+URL: http://localhost:3000/api/v1/movies/643fdc3f4b6817249636e325
+
+Headers:
+key: Content-Type
+value: application/json
+
